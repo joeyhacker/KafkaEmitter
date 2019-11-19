@@ -1,0 +1,28 @@
+broker:
+  - node1:9092
+  - node2:9092
+  - node3:9092
+
+producer:
+  acks: -1
+
+schema:
+  fields:
+    -
+      name: id
+      type: integer
+      mode: sequence
+    -
+      name: name
+      type: string
+      mode: random
+      length: 6
+    -
+      name: createTime
+      type: date
+      format: yyyy-MM-dd HH:mm:ss
+      start: 2019-01-01 00:00:00
+
+
+
+
