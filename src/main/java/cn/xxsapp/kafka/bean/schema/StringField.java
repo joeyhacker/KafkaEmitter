@@ -2,17 +2,24 @@ package cn.xxsapp.kafka.bean.schema;
 
 import java.util.Arrays;
 
-public class StringField extends DataField {
+public class StringField extends Field {
 
-    public StringField() {
-        super("string");
-    }
+    public static final String MODE_WORDS = "words";
+    public static final String MODE_RAN = "ran";
+    public static final String MODE_UUID = "uuid";
 
     private int length;
 
     private String[] words;
 
-    private String filePath;
+    public StringField() {
+        super("string");
+    }
+
+    public StringField(int length) {
+        super("string", MODE_RAN);
+        this.length = length;
+    }
 
     public int getLength() {
         return length;
@@ -30,20 +37,11 @@ public class StringField extends DataField {
         this.words = words;
     }
 
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
     @Override
     public String toString() {
         return "StringField{" +
                 "length=" + length +
                 ", words=" + Arrays.toString(words) +
-                ", filePath='" + filePath + '\'' +
                 '}';
     }
 }

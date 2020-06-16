@@ -1,21 +1,18 @@
-broker:
-  - node1:9092
-  - node2:9092
-  - node3:9092
-
 producer:
-  acks: -1
+  bootstrap.servers:
+    - "localhost:9092"
+  acks: "-1"
 
 schema:
   fields:
     -
       name: id
       type: integer
-      mode: sequence
+      mode: seq
     -
       name: name
       type: string
-      mode: random
+      mode: ran
       length: 6
     -
       name: createTime

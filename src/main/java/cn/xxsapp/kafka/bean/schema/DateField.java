@@ -2,7 +2,7 @@ package cn.xxsapp.kafka.bean.schema;
 
 import java.util.Date;
 
-public class DateField extends DataField {
+public class DateField extends Field {
 
     public DateField() {
         super("date");

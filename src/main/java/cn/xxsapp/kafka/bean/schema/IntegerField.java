@@ -1,26 +1,25 @@
 package cn.xxsapp.kafka.bean.schema;
 
-public class IntegerField extends DataField {
+public class IntegerField extends Field {
+
+    public static final String MODE_SEQ = "seq";
+    public static final String MODE_RAN = "ran";
 
     public IntegerField() {
         super("integer");
     }
 
-    private String range;
+    public IntegerField(int start, int step) {
+        super("integer", MODE_SEQ);
+        this.start = start;
+        this.step = step;
+    }
 
     private int start;
 
     private int end;
 
     private int step;
-
-    public String getRange() {
-        return range;
-    }
-
-    public void setRange(String range) {
-        this.range = range;
-    }
 
     public int getStart() {
         return start;
@@ -50,8 +49,7 @@ public class IntegerField extends DataField {
     @Override
     public String toString() {
         return "IntegerField{" +
-                "range='" + range + '\'' +
-                ", start=" + start +
+                "start=" + start +
                 ", end=" + end +
                 ", step=" + step +
                 '}';

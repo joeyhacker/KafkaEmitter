@@ -30,16 +30,14 @@ public class ConfParser {
         return StringUtils.join(list, ",");
     }
 
-    public ProducerConfigBean getProducerConfig(String id) {
+    public Map<String, Object> getConfig(String id) {
         Map map;
         if (StringUtils.isBlank(id)) {
             map = getObject(props, "producer");
         } else {
             map = getObject(getObject(props, "producer"), id);
         }
-        int acks = (int) map.getOrDefault("acks", 1);
-        int batchSize = (int) map.getOrDefault("batchSize", 16384);
-        return new ProducerConfigBean(String.valueOf(acks), batchSize);
+        return map;
     }
 
     public List getSchema(String id) {

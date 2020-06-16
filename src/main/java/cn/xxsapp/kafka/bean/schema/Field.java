@@ -1,9 +1,14 @@
 package cn.xxsapp.kafka.bean.schema;
 
-public class DataField {
+public class Field {
 
-    public DataField(String type) {
+    public Field(String type) {
         this.type = type;
+    }
+
+    public Field(String type, String mode) {
+        this.type = type;
+        this.mode = mode;
     }
 
     private String type;

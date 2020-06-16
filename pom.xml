@@ -15,10 +15,10 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <scala.version>2.11.8</scala.version>
-        <scala.binary.version>2.11</scala.binary.version>
-        <kafka.version>2.3.0</kafka.version>
-        <kafka.client.version>2.3.0</kafka.client.version>
-        <reactor.version>3.3.0.RELEASE</reactor.version>
+        <scala.binary.version>2.12</scala.binary.version>
+        <kafka.version>2.5.0</kafka.version>
+        <kafka.client.version>2.5.0</kafka.client.version>
+        <reactor.version>3.3.6.RELEASE</reactor.version>
     </properties>
 
     <dependencies>
