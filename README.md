@@ -17,5 +17,5 @@
 
 示例:
  * java -jar target/kafka-emitter-jar-with-dependencies.jar  -c src/main/resources/conf.yaml -t test1 -i 500 -l 5
- * ![avatar](/snapshot/WX20200617-160638.png)   
+ * ![avatar](/snapshot/WX20200617-161104.png)   
  * ![avatar](/snapshot/WX20200617-160707.png) 
