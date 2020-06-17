@@ -3,20 +3,43 @@ package cn.xxsapp.kafka.generator.string;
 import cn.xxsapp.kafka.generator.Generator;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class StringWordsGenerator extends Generator<String> {
 
     String[] array;
 
-    Random random;
+    Random random = new Random();
 
-    public StringWordsGenerator(String[] array) {
+    AtomicInteger index = new AtomicInteger(0);
+
+    boolean isRan;
+
+    public StringWordsGenerator(String[] array, boolean isRan) {
         this.array = array;
-        this.random = new Random();
+        this.isRan = isRan;
     }
 
     @Override
     public String getNext() {
-        return array[random.nextInt(array.length)];
+        if (array != null && array.length > 0) {
+            if (isRan) {
+                return array[random.nextInt(array.length)];
+            } else {
+                int idx = index.getAndUpdate(n -> {
+                    if (array.length - 1 <= n) {
+                        return 0;
+                    } else {
+                        return n + 1;
+                    }
+                });
+                return array[idx];
+            }
+        } else {
+            return "";
+        }
+    }
+
+    public static void main(String[] args) {
     }
 }

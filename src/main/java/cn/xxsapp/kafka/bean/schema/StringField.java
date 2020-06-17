@@ -12,6 +12,8 @@ public class StringField extends Field {
 
     private String[] words;
 
+    private boolean isRan;
+
     public StringField() {
         super("string");
     }
@@ -19,6 +21,14 @@ public class StringField extends Field {
     public StringField(int length) {
         super("string", MODE_RAN);
         this.length = length;
+    }
+
+    public boolean isRan() {
+        return isRan;
+    }
+
+    public void setRan(boolean ran) {
+        isRan = ran;
     }
 
     public int getLength() {

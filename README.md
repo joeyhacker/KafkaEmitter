@@ -27,11 +27,11 @@ schema:
   fields:
     -
       name: id
-      type: integer
+      type: int
       mode: seq
     -
       name: name
-      type: string
+      type: str
       mode: ran
       length: 6
     -
@@ -41,10 +41,14 @@ schema:
       start: 2019-01-01 00:00:00
 ```
 支持的数据类型: 整数-integer, 字符串string, date-日期时间
-
-| 类型 | 模式 | 参数 |
-| - | - | - |
-| 1 | 2 | 3 | 
+| 类型 | 模式 | 参数 | 说明 |
+| - | - | - | - |
+| int | seq | start = 开始, end = 结束, step = 步长 | 用于顺序生成数字序列 |
+| int | ran | start = 开始, end = 结束 | 用于生成随机数字 |
+| str | ran | length = 字符串长度 | 用于生成固定长度的随机字符串 |
+| str | uuid | 无 | 用于UUID字符串 |
+| str | words | array = 字符串数组, isRan = 是否随机，默认是按先后顺序 | 在指定的数组中选择字符串 |
+| date | 无 | format = 时间格式, start = 开始时间 | 按照指定日期格式生成时间 |
 
 
 #### 示例:

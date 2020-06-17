@@ -33,7 +33,7 @@ public class GeneratorFactory {
                     return new StringRandomGenerator(sField.getLength());
                 }
                 if (StringField.MODE_WORDS.equalsIgnoreCase(mode)) {
-                    return new StringWordsGenerator(sField.getWords());
+                    return new StringWordsGenerator(sField.getWords(), sField.isRan());
                 }
                 if (StringField.MODE_UUID.equalsIgnoreCase(mode)) {
                     return new StringUUIDGenerator();
