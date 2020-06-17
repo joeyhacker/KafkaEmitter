@@ -43,6 +43,7 @@ schema:
  * producer 下为对应的kafka producer属性
  * schema 下为数据描述
  * schema 暂时支持 int, str, date 三种数据类型, 属性表如下: 
+ 
 | 类型 | 模式 | 参数 | 说明 |
 | - | - | - | - |
 | int | seq | start = 开始, end = 结束, step = 步长 | 用于顺序生成数字序列 |
