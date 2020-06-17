@@ -82,7 +82,13 @@ public class Boot {
         }
 
         MessageSender sender =
-                MessageSender.getBuilder().setInterval(interval).setLimit(limit).setProps(props).setSchema(schema).setTopic(topic).build(1);
+                MessageSender.getBuilder()
+                        .setInterval(interval)
+                        .setLimit(limit)
+                        .setProps(props)
+                        .setSchema(schema)
+                        .setTopic(topic)
+                        .build(1);
 
         CountDownLatch latch = new CountDownLatch(limit);
         sender.start(latch);

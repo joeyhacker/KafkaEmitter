@@ -1,11 +1,7 @@
 package cn.xxsapp.kafka;
 
 import cn.xxsapp.kafka.bean.schema.Field;
-import cn.xxsapp.kafka.bean.schema.IntegerField;
-import cn.xxsapp.kafka.bean.schema.StringField;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.Producer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.LongSerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -14,9 +10,10 @@ import reactor.core.publisher.SynchronousSink;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class MessageSender {
@@ -70,7 +67,6 @@ public class MessageSender {
             }
         }).subscribe(ret -> {
             latch.countDown();
-//            System.out.println("msg-" + ret + " has been sent.");
         });
     }
 
