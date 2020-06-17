@@ -40,7 +40,7 @@ schema:
       format: yyyy-MM-dd HH:mm:ss
       start: 2019-01-01 00:00:00
 ```
-支持的数据类型: 整数-integer, 字符串string, date-日期时间
+暂时支持int, str, date三种数据类型, 属性如下: 
 | 类型 | 模式 | 参数 | 说明 |
 | - | - | - | - |
 | int | seq | start = 开始, end = 结束, step = 步长 | 用于顺序生成数字序列 |
