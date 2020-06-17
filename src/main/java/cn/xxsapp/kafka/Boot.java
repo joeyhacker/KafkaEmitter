@@ -7,6 +7,8 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.nio.charset.Charset;
@@ -15,6 +17,8 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
 public class Boot {
+
+    private Logger logger = LoggerFactory.getLogger(Boot.class);
 
     public static void main(String[] args) throws Throwable {
 
